@@ -19,7 +19,6 @@ export function captureError({ SENTRY_DSN, ...env }, error) {
 
   Sentry.init({
     dsn: SENTRY_DSN,
-    release: "github/howie@" + env.HOWIE_VERSION,
   });
 
   const repository = env.GITHUB_REPOSITORY.split("/").pop();
