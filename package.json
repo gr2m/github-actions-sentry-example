@@ -1,5 +1,6 @@
 {
   "name": "github-actions-sentry-example",
+  "private": true,
   "type": "module",
   "description": "This repository is an example of how to send errors that occur in a GitHub Actions workflow build to [Sentry](https://sentry.io/welcome/), using [the Sentry SDK for Node.js](https://docs.sentry.io/platforms/node/).",
   "version": "1.0.0",
