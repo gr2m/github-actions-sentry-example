@@ -23,9 +23,7 @@ export function captureError({ SENTRY_DSN, ...env }, error) {
 
   const repository = env.GITHUB_REPOSITORY.split("/").pop();
   const build = {
-    summary: `${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}/actions/runs/${env.GITHUB_RUN_NUMBER}`,
-    job: `${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}/runs/${env.GITHUB_JOB}`,
-    attempt: env.GITHUB_RUN_ATTEMPT,
+    url: `${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}/actions/runs/${env.GITHUB_RUN_ID}`,
   };
 
   Sentry.captureException(error, {
@@ -37,7 +35,7 @@ export function captureError({ SENTRY_DSN, ...env }, error) {
       repository,
     },
     user: {
-      id: env.GITHUB_ACTOR,
+      username: env.GITHUB_ACTOR,
     },
   });
 }
