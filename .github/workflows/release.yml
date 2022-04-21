@@ -12,16 +12,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "lts/*"
+      - run: npm install @eclass/semantic-release-sentry-releases
       - run: npx semantic-release --debug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo "VERSION=$(git describe --tags)" >> $GITHUB_ENV
-      - name: Create Sentry release
-        uses: getsentry/action-release@v1
-        env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: gr2m
           SENTRY_PROJECT: github-actions-sentry-example
-        with:
-          environment: production
-          version: ${{ env.VERSION }}
