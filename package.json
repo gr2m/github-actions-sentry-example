@@ -1,0 +1,18 @@
+{
+  "name": "github-actions-sentry-example",
+  "type": "module",
+  "description": "This repository is an example of how to send errors that occur in a GitHub Actions workflow build to [Sentry](https://sentry.io/welcome/), using [the Sentry SDK for Node.js](https://docs.sentry.io/platforms/node/).",
+  "version": "1.0.0",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@sentry/node": "^6.19.6",
+    "@sentry/tracing": "^6.19.6",
+    "octokit": "^1.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
