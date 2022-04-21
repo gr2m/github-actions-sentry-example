@@ -1,4 +1,6 @@
 import * as Sentry from "@sentry/node";
+import "@sentry/tracing";
+
 import core from "@actions/core";
 
 /**
