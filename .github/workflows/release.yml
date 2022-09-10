@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "lts/*"
+          node-version: lts/*
       - run: npm install @eclass/semantic-release-sentry-releases
       - run: npx semantic-release --debug
         env:
